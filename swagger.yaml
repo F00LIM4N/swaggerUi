@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: Morpion API
+  description: API pour le jeu du Morpion
+  version: 1.0.0
+servers:
+  - url: https://your-api-url.com
+paths:
+  /test:
+    get:
+      summary: Récupérer la liste des joueurs
+      responses:
+        '200':
+          description: Une liste de joueurs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: Alice
+  /players:
+    post:
+      summary: Ajouter un nouveau joueur
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Bob
+      responses:
+        '201':
+          description: Joueur ajouté avec succès
+  /game-endpoint:
+    post:
+      summary: fin de jeu et donc requête ajax
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                player1:
+                  type: integer
+                  example: 1
+                player2:
+                  type: integer
+                  example: 2
+                winner:
+                  type: integer
+                  example: 1
+      responses:
+        '201':
+          description: Victoire du joueur ajoutée

@@ -4,7 +4,7 @@ info:
   description: API pour le jeu du Morpion
   version: 1.0.0
 servers:
-  - url: https://your-api-url.com
+  - url: http://127.0.0.1:8000/
 paths:
   /test:
     get:
